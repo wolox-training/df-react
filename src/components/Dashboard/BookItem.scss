@@ -1,0 +1,26 @@
+@import '../_fonts';
+
+.book-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 286px;
+  margin: 0 35px 65px 35px;
+}
+
+.book-img {
+  height: auto;
+  max-height: 182px;
+  max-width: 128px;
+  width: auto;
+}
+
+.book-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.book-author {
+  font-size: 12px;
+}
