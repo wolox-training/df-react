@@ -6,13 +6,15 @@ import defaultBookSvg from '../../assets/default_book_image.jpg';
 
 const getImage = book => book.image_url || defaultBookSvg;
 
-export const BookItem = props => (
-  <div className="book-container">
-    <img className="book-img" alt="Book" src={getImage(props.book)} />
-    <span className="book-title">{props.book.title}</span>
-    <span className="book-author">{props.book.author}</span>
-  </div>
-);
+function BookItem(props) {
+  return (
+    <div className="book-container">
+      <img className="book-img" alt="Book" src={getImage(props.book)} />
+      <span className="book-title">{props.book.title}</span>
+      <span className="book-author">{props.book.author}</span>
+    </div>
+  );
+}
 
 BookItem.propTypes = {
   book: PropTypes.shape({
@@ -25,3 +27,5 @@ BookItem.propTypes = {
     image_url: PropTypes.string
   }).isRequired
 };
+
+export default BookItem;

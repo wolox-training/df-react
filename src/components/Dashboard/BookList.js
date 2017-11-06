@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { BookItem } from './BookItem';
+import BookItem from './BookItem';
 import './BookList.css';
 
 const getItem = book => <BookItem key={`book_${book.id}`} book={book} />;
 
-export const BookList = props => <div className="book-list">{props.books.map(book => getItem(book))}</div>;
+function BookList(props) {
+  return <div className="book-list">{props.books.map(getItem)}</div>;
+}
 
 BookList.propTypes = {
   books: PropTypes.arrayOf(
@@ -21,3 +23,5 @@ BookList.propTypes = {
     })
   ).isRequired
 };
+
+export default BookList;

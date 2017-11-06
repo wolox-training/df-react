@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { NavigationBar } from './NavigationBar';
-import { Dashboard } from './Dashboard/Dashboard';
+import NavigationBar from './NavigationBar';
+import Dashboard from './Dashboard/Dashboard';
 
 const App = () => (
   <div>

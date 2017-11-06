@@ -1,10 +1,10 @@
 import React from 'react';
 
 import books from './books.json';
-import { BookList } from './BookList';
-import { BookFilter } from './BookFilter';
+import BookList from './BookList';
+import BookFilter from './BookFilter';
 
-export class Dashboard extends React.Component {
+class Dashboard extends React.Component {
   state = { books };
 
   render() {
@@ -16,3 +16,5 @@ export class Dashboard extends React.Component {
     );
   }
 }
+
+export default Dashboard;
