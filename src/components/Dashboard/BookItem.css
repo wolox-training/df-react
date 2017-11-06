@@ -5,8 +5,8 @@
 .book-container {
   display: flex;
   flex-direction: column;
-  width: 168px;
-  margin: 0 35px 65px 35px; }
+  width: 200px;
+  margin: 0 35px 65px 0; }
 
 .book-img {
   height: auto;

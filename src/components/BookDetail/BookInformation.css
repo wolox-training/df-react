@@ -1,0 +1,51 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:400,400i,700';
+* {
+  font-family: 'Roboto', sans-serif; }
+
+.book-information-container {
+  display: flex;
+  justify-content: center;
+  padding: 90px 0; }
+
+.book-information-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+
+.book-information-img {
+  height: auto;
+  max-height: 272px;
+  max-width: 191px;
+  object-fit: contain;
+  margin-right: 21px;
+  width: auto; }
+
+.book-information-cluster-container {
+  display: flex;
+  flex-direction: column; }
+
+.book-information-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px; }
+
+.book-information-details {
+  font-size: 16px;
+  color: #4a4a4a; }
+
+.book-information-details-year {
+  margin-bottom: 8px; }
+
+.book-information-description {
+  color: #9b9b9b;
+  font-size: 14px;
+  max-width: 563px; }
+
+.book-information-rent-button {
+  background-color: #00ADEE;
+  border: none;
+  border-radius: 0;
+  font-size: 20px;
+  color: #fff;
+  height: 38px;
+  max-width: 192px; }

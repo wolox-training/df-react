@@ -5,7 +5,7 @@
 .book-filter-container {
   display: flex;
   justify-content: flex-start;
-  padding: 50px 235px; }
+  padding: 50px 0px; }
 
 .dropdown {
   position: relative;

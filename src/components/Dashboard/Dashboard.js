@@ -1,11 +1,15 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
-import books from './books.json';
+import books from '../../assets/books.json';
+
 import BookList from './BookList';
 import BookFilter from './BookFilter';
 
 class Dashboard extends React.Component {
   state = {
+    bookId: undefined,
+    toBookDetail: false,
     currentFilterType: '',
     currentFilterValue: '',
     filteredBooks: books
@@ -32,6 +36,10 @@ class Dashboard extends React.Component {
   };
 
   render() {
+    if (this.state.toBookDetail) {
+      return <Redirect push to={`/books/${this.state.bookId}`} />;
+    }
+
     return (
       <div>
         <BookFilter

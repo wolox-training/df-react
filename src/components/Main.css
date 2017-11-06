@@ -1,0 +1,5 @@
+.main {
+  display: flex;
+  justify-content: center; }
+  .main > div {
+    max-width: 80%; }
