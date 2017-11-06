@@ -3,10 +3,9 @@
   font-family: 'Roboto', sans-serif; }
 
 .book-container {
-  align-items: center;
   display: flex;
   flex-direction: column;
-  width: 286px;
+  width: 168px;
   margin: 0 35px 65px 35px; }
 
 .book-img {
