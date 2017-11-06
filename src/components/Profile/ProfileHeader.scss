@@ -1,0 +1,56 @@
+@import '../_colors';
+@import '../_fonts';
+
+.profile-header {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.profile-avatar {
+  height: auto;
+  max-height: 108px;
+  max-width: 108px;
+  width: auto;
+  margin-right: 58px;
+}
+
+.profile-user-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.profile-user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-user-name {
+  color: $atlantis;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.profile-user-email {
+  color: $tundora;
+  font-size: 12px;
+}
+
+.profile-social-text {
+  font-size: 14px;
+  color: $tundora;
+}
+
+.profile-header-social {
+  display: flex;
+
+  // I was trying out this nth-child thing and I also think it scales better
+  // than a div for the separator in case we add more stuff
+  :nth-last-child(2n) {
+    padding-right: 10px;
+    margin-right: 10px;
+    border-right: 1px solid $atlantis;
+  }
+}
