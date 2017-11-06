@@ -3,6 +3,7 @@ import React from 'react';
 import books from '../../assets/books.json';
 
 import BookInformation from './BookInformation';
+import BookSuggestions from './BookSuggestions';
 
 class BookDetail extends React.Component {
   state = {
@@ -13,6 +14,7 @@ class BookDetail extends React.Component {
     return (
       <div>
         <BookInformation book={this.state.book} />
+        <BookSuggestions />
       </div>
     );
   }
