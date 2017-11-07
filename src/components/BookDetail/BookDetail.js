@@ -10,11 +10,7 @@ class BookDetail extends React.Component {
   };
 
   render() {
-    return (
-      <div>
-        <BookInformation book={this.state.book} />
-      </div>
-    );
+    return <BookInformation book={this.state.book} />;
   }
 }
 

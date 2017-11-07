@@ -8,7 +8,6 @@ import BookFilter from './BookFilter';
 
 class Dashboard extends React.Component {
   state = {
-    bookId: undefined,
     toBookDetail: false,
     currentFilterType: '',
     currentFilterValue: '',
