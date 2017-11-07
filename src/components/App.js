@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { NavigationBar } from './NavigationBar';
-import { Profile } from './Profile/Profile';
+import NavigationBar from './NavigationBar';
+import Dashboard from './Dashboard/Dashboard';
 
 const App = () => (
   <div>
     <NavigationBar />
-    <Profile />
+    <Dashboard />
   </div>
 );
 

@@ -1,0 +1,23 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:400,700';
+* {
+  font-family: 'Roboto', sans-serif; }
+
+.book-container {
+  display: flex;
+  flex-direction: column;
+  width: 168px;
+  margin: 0 35px 65px 35px; }
+
+.book-img {
+  height: auto;
+  max-height: 182px;
+  max-width: 128px;
+  width: auto; }
+
+.book-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px 0; }
+
+.book-author {
+  font-size: 12px; }
