@@ -34,6 +34,10 @@
   padding: 0 11px;
 }
 
+.invalid {
+  border: 1px solid $red;
+}
+
 .login-form-accept-button {
   align-self: center;
   background-color: $cerulean;
@@ -45,4 +49,8 @@
   height: 38px;
   margin-top: 40px;
   width: 175px;
+}
+
+.login-form-error {
+  color: $red;
 }

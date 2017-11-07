@@ -1,10 +1,59 @@
 import React from 'react';
 
-import './Login.css'
+import './Login.css';
 import avatarWbooksPng from '../../assets/avatar-wbooks.png';
 
+const EMAIL_REGEX = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+
 class Login extends React.Component {
-  state = { email: '', password: '' };
+  state = {
+    email: '',
+    password: '',
+    emailError: '',
+    passwordError: '',
+    focusInvalidEmail: false,
+    focusInvalidPassword: false
+  };
+
+  emailChanged = e => {
+    const email = e.target.value;
+    const emailError = this.validateEmail(email);
+    this.setState({ email, emailError, focusInvalidEmail: false });
+  };
+
+  passwordChanged = e => {
+    const password = e.target.value;
+    const passwordError = this.validatePassword(password);
+    this.setState({ password, passwordError, focusInvalidPassword: false });
+  };
+
+  validatePassword = password => {
+    if (password.length >= 8 && password.length < 52) {
+      return '';
+    }
+    return 'Password must have between 8 and 52 characters';
+  };
+
+  validateEmail = email => {
+    if (email.length === 0) {
+      return 'Email cannot be empty';
+    } else if (EMAIL_REGEX.test(email)) {
+      return '';
+    }
+    return 'Email must have a valid format';
+  };
+
+  logInHandler = () => {
+    if (!this.state.emailError && this.state.passwordError) {
+      this.setState({ focusInvalidPassword: false, focusInvalidEmail: false });
+    }
+    if (this.state.emailError) {
+      this.setState({ focusInvalidEmail: true });
+    }
+    if (this.state.passwordError) {
+      this.setState({ focusInvalidPassword: true });
+    }
+  };
 
   render() {
     return (
@@ -12,13 +61,29 @@ class Login extends React.Component {
         <img className="login-logo" src={avatarWbooksPng} alt="logo" />
         <label className="login-form-field" htmlFor="email-input">
           Email
-          <input className="login-form-input" id="email-input" type="text" />
+          <input
+            className={`login-form-input ${this.state.focusInvalidEmail ? 'invalid' : ''}`}
+            id="email-input"
+            type="text"
+            value={this.state.email}
+            onChange={this.emailChanged}
+          />
+          <span className="login-form-error">{this.state.emailError}</span>
         </label>
         <label className="login-form-field" htmlFor="password-input">
           Password
-          <input className="login-form-input" id="password-input" type="password" />
+          <input
+            className={`login-form-input ${this.state.focusInvalidPassword ? 'invalid' : ''}`}
+            id="password-input"
+            type="password"
+            value={this.state.password}
+            onChange={this.passwordChanged}
+          />
+          <span className="login-form-error">{this.state.passwordError}</span>
         </label>
-        <button className="login-form-accept-button">Log in</button>
+        <button type="button" className="login-form-accept-button" onClick={this.logInHandler}>
+          Log in
+        </button>
       </form>
     );
   }
