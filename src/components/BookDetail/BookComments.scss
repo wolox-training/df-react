@@ -1,0 +1,19 @@
+@import '../_colors';
+@import '../_fonts';
+
+.book-comments-container {
+  padding: 40px 0;
+}
+
+.book-comments-title {
+  color: $atlantis;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.book-comments-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 38px;
+}
