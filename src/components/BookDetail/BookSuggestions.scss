@@ -1,0 +1,49 @@
+@import '../_colors';
+
+.book-suggestions-container {
+  display: flex;
+  flex-direction: column;
+
+  &::before {
+    background-color: $cerulean;
+    content: '';
+    height: 1px;
+    margin-bottom: 31px;
+    width: 100%;
+  }
+
+  &::after {
+    background-color: $cerulean;
+    content: '';
+    height: 1px;
+    margin-top: 31px;
+    width: 100%;
+  }
+}
+
+.book-suggestions-title {
+  color: $atlantis;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.book-suggestions-options-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.book-suggestion-image-container {
+  align-items: center;
+  background-color: $alto;
+  display: flex;
+  height: 124px;
+  justify-content: center;
+  margin-left: 54px;
+  width: 87px;
+}
+
+.book-suggestion-image {
+  height: 50px;
+  width: 50px;
+}
