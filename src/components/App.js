@@ -1,12 +1,12 @@
 import React from 'react';
 
 import NavigationBar from './NavigationBar';
-import Dashboard from './Dashboard/Dashboard';
+import Main from './Main';
 
 const App = () => (
   <div>
     <NavigationBar />
-    <Dashboard />
+    <Main />
   </div>
 );
 
