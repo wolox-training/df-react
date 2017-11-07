@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import Dashboard from './Dashboard/Dashboard';
 import BookDetail from './BookDetail/BookDetail';
+import Login from './Login/Login';
 import './Main.css';
 
 function Main() {
@@ -11,6 +12,7 @@ function Main() {
       <Switch>
         <Route exact path="/" component={Dashboard} />
         <Route exact path="/books/:id" component={BookDetail} />
+        <Route path="/login" component={Login} />
       </Switch>
     </main>
   );
