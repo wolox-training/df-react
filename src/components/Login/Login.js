@@ -1,4 +1,6 @@
 import React from 'react';
+import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 import './Login.css';
 import avatarWbooksPng from '../../assets/avatar-wbooks.png';
@@ -12,8 +14,13 @@ class Login extends React.Component {
     emailError: '',
     passwordError: '',
     focusInvalidEmail: false,
-    focusInvalidPassword: false
+    focusInvalidPassword: false,
+    loggedIn: localStorage.token
   };
+
+  axiosInstance = axios.create({
+    baseURL: 'https://wbooks-api-stage.herokuapp.com/api/v1/'
+  });
 
   emailChanged = e => {
     const email = e.target.value;
@@ -44,8 +51,20 @@ class Login extends React.Component {
   };
 
   logInHandler = () => {
-    if (!this.state.emailError && this.state.passwordError) {
+    if (!this.state.emailError && !this.state.passwordError) {
       this.setState({ focusInvalidPassword: false, focusInvalidEmail: false });
+      this.axiosInstance
+        .post('/users/sessions', {
+          email: this.state.email,
+          password: this.state.password
+        })
+        .then(response => {
+          localStorage.token = response.data.access_token;
+          this.setState({ loggedIn: true });
+        })
+        .catch(error => {
+          alert(error); // eslint-disable-line no-alert
+        });
     }
     if (this.state.emailError) {
       this.setState({ focusInvalidEmail: true });
@@ -56,6 +75,9 @@ class Login extends React.Component {
   };
 
   render() {
+    if (this.state.loggedIn) {
+      return <Redirect push to="/" />;
+    }
     return (
       <form className="login-form">
         <img className="login-logo" src={avatarWbooksPng} alt="logo" />

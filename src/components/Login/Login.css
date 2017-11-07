@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 50vw; }
+  width: 50vw;
+  margin: 30px; }
 
 .login-logo {
   align-self: center;
