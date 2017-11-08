@@ -44,13 +44,14 @@
   background-size: contain;
   border: none;
   height: 100%;
+  outline: none;
   width: 100%; }
 
 .nav-bar-user-dropdown {
   background-color: #fff;
   border: 1px solid #f2f2f2;
   box-shadow: 2.5px 2.5px 5px 0px #9b9b9b;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   height: 70px;
@@ -88,3 +89,6 @@
     .nav-bar-user-dropdown .nav-bar-user-dropdown-item:hover {
       background-color: rgba(0, 173, 238, 0.25);
       color: #000; }
+
+.nav-bar-user-dropdown.show {
+  display: flex; }
