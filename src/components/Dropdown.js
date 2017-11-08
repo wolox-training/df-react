@@ -5,12 +5,15 @@ import PropTypes from 'prop-types';
 import './Dropdown.css';
 
 class Dropdown extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
-
   componentWillMount = () => document.addEventListener('click', this.handleClick, false);
+
+  componentWillReceiveProps = nextProps => {
+    if (nextProps.show) {
+      document.addEventListener('click', this.handleClick, false);
+    } else {
+      document.removeEventListener('click', this.handleClick, false);
+    }
+  };
 
   componentWillUnmount = () => document.removeEventListener('click', this.handleClick, false);
 
