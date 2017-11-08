@@ -1,10 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './NavigationBar.css';
 
 import wbooksLogo from '../assets/wbooks_logo.svg';
 import notificationsSvg from '../assets/notifications.svg';
 import addBookSvg from '../assets/add_book.svg';
+
+import Dropdown from './Dropdown';
+
+const NAVBAR_USER_OPTIONS = [
+  {
+    title: 'Perfil',
+    path: '/'
+  },
+  {
+    title: 'Cerrar sesión',
+    path: '/'
+  }
+];
 
 class NavigationBar extends React.Component {
   state = { showUserOptions: false };
@@ -32,14 +44,7 @@ class NavigationBar extends React.Component {
               alt="Settings"
               onClick={this.changeUserDropdownState}
             />
-            <ul className={`nav-bar-user-dropdown ${this.state.showUserOptions ? 'show' : ''}`}>
-              <Link className="nav-bar-user-dropdown-item" to="/">
-                Perfil
-              </Link>
-              <Link className="nav-bar-user-dropdown-item" to="/">
-                Cerrar sesión
-              </Link>
-            </ul>
+            <Dropdown show={this.state.showUserOptions} options={NAVBAR_USER_OPTIONS} />
           </div>
         </div>
       </div>
