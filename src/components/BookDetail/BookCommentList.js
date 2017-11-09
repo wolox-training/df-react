@@ -22,6 +22,10 @@ function BookCommentList(props) {
   );
 }
 
+BookCommentList.contextTypes = {
+  store: PropTypes.object
+};
+
 BookCommentList.propTypes = {
   comments: PropTypes.arrayOf(
     PropTypes.shape({
