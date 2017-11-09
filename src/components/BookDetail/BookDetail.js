@@ -4,6 +4,7 @@ import books from '../../assets/books.json';
 
 import BookInformation from './BookInformation';
 import BookSuggestions from './BookSuggestions';
+import BookComments from './BookComments';
 
 class BookDetail extends React.Component {
   state = {
@@ -15,6 +16,7 @@ class BookDetail extends React.Component {
       <div>
         <BookInformation book={this.state.book} />
         <BookSuggestions />
+        <BookComments />
       </div>
     );
   }
