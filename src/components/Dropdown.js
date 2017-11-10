@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import './Dropdown.css';
 
 class Dropdown extends React.Component {
-  componentWillMount = () => document.addEventListener('click', this.handleClick, false);
-
   componentWillReceiveProps = nextProps => {
     if (nextProps.show) {
       document.addEventListener('click', this.handleClick, false);
@@ -14,8 +12,6 @@ class Dropdown extends React.Component {
       document.removeEventListener('click', this.handleClick, false);
     }
   };
-
-  componentWillUnmount = () => document.removeEventListener('click', this.handleClick, false);
 
   setContainerRef = node => {
     this.setState({ containerRef: node });

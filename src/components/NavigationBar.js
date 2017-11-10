@@ -1,24 +1,17 @@
 import React from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 import wbooksLogo from '../assets/wbooks_logo.svg';
 import notificationsSvg from '../assets/notifications.svg';
 import addBookSvg from '../assets/add_book.svg';
+import AuthService from '../services/AuthService';
 
 import Dropdown from './Dropdown';
 import './NavigationBar.css';
 
-const axiosInstance = axios.create({
-  baseURL: 'https://wbooks-api-stage.herokuapp.com/api/v1/'
-});
-
 const logout = (onSuccess, onError) => {
-  localStorage.removeItem('token');
-
   // The below request doesn't work, but I don't have the real url to logout
-  axiosInstance
-    .delete('/users/sessions')
+  AuthService.logout()
     .then(response => {
       if (onSuccess) {
         onSuccess(response);
