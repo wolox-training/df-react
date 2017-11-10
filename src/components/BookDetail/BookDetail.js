@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 
-import AxiosInstance from '../../config/AxiosInstance';
+import BooksService from '../../services/BooksService';
 
 import BookInformation from './BookInformation';
 import BookSuggestions from './BookSuggestions';
@@ -11,13 +11,9 @@ class BookDetail extends React.Component {
   state = {};
 
   componentDidMount = () => {
-    AxiosInstance.get(`/books/${this.props.match.params.id}`) // eslint-disable-line react/prop-types
+    BooksService.getBookDetail(this.props.match.params.id) // eslint-disable-line react/prop-types
       .then(response => {
         this.setState({ book: response.data });
-      })
-      .catch(() => {
-        localStorage.removeItem('token');
-        this.setState({ noAuth: true });
       });
   };
 

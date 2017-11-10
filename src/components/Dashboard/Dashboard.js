@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 
-import AxiosInstance from '../../config/AxiosInstance';
+import BooksService from '../../services/BooksService';
 
 import BookList from './BookList';
 import BookFilter from './BookFilter';
@@ -17,13 +17,12 @@ class Dashboard extends React.Component {
   };
 
   componentDidMount = () => {
-    AxiosInstance.get('/books')
+    BooksService.getBooks()
       .then(response => {
         this.allBooks = response.data;
         this.setState({ filteredBooks: response.data });
       })
       .catch(() => {
-        localStorage.removeItem('token');
         this.setState({ noAuth: true });
       });
   };
