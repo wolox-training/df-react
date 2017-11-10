@@ -22,7 +22,7 @@ class BookFilter extends React.Component {
           tabIndex={0}
         >
           <span className="dropdown-placeholder book-input">
-            {this.props.currentFilterType || 'Seleccionar filtro'}
+            {this.props.filterType || 'Seleccionar filtro'}
           </span>
           <img src={trianglePng} alt="Dropdown arrow" />
         </div>
@@ -31,7 +31,7 @@ class BookFilter extends React.Component {
             <option
               key={`filter_${filter}`}
               value={filter}
-              onClick={e => this.props.selectFilterType(e.target.value)}
+              onClick={e => this.props.updateFilterType(e.target.value)}
             >
               {filter}
             </option>
@@ -41,7 +41,8 @@ class BookFilter extends React.Component {
           <input
             className="title-input book-input"
             placeholder="Buscar..."
-            onInput={e => this.props.selectFilterValue(e.target.value)}
+            onInput={e => this.props.updateFilterValue(e.target.value)}
+            value={this.props.filterValue}
           />
           <button className="search-button" onClick={this.props.searchBooks} />
         </div>
@@ -51,10 +52,11 @@ class BookFilter extends React.Component {
 }
 
 BookFilter.propTypes = {
-  selectFilterType: PropTypes.func.isRequired, // eslint-disable-line react/no-unused-prop-types
-  selectFilterValue: PropTypes.func.isRequired,
+  updateFilterType: PropTypes.func.isRequired, // eslint-disable-line react/no-unused-prop-types
+  updateFilterValue: PropTypes.func.isRequired,
   searchBooks: PropTypes.func.isRequired,
-  currentFilterType: PropTypes.string.isRequired
+  filterType: PropTypes.string.isRequired,
+  filterValue: PropTypes.string.isRequired
 };
 
 export default BookFilter;
