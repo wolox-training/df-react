@@ -1,0 +1,43 @@
+@import '../_colors';
+
+.login-input-container {
+  display: flex;
+  flex-direction: column;
+  color: red;
+
+  .hide {
+    display: none;
+  }
+}
+
+.login-form-input {
+  background-color: $wild-sand;
+  border: none;
+  color: $dusty-grey;
+  font-size: 14px;
+  font-style: italic;
+  height: 38px;
+  margin-top: 10px;
+  min-height: 38px;
+  padding: 0 11px;
+
+  &.valid {
+    &:focus {
+      border: 1px solid $atlantis !important;
+      box-shadow: 0 0 3px $atlantis !important;
+      -moz-box-shadow: 0 0 3px $atlantis !important;
+      -webkit-box-shadow: 0 0 3px $atlantis !important;
+      outline-offset: 0px !important;
+      outline: none !important;
+    }
+  }
+
+  &.invalid {
+    border: 1px solid $red !important;
+    box-shadow: 0 0 3px $red !important;
+    -moz-box-shadow: 0 0 3px $red !important;
+    -webkit-box-shadow: 0 0 3px $red !important;
+    outline-offset: 0px !important;
+    outline: none !important;
+  }
+}

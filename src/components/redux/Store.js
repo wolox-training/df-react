@@ -1,6 +1,7 @@
 import { combineReducers, createStore } from 'redux/dist/redux';
 import thunk from 'redux-thunk';
 import applyMiddleware from 'redux/es/applyMiddleware';
+import { reducer as form } from 'redux-form';
 
 import BookService from '../services/BookService';
 
@@ -75,6 +76,7 @@ const booksReducer = (state = defaultState, action) => {
 };
 
 const reducers = combineReducers({
+  form,
   commentsReducer,
   booksReducer
 });
